@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.hero-image {
+  background-image: url("../src//assets//Image/hero2.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.hero-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #183435d7 0%, #a0a9a49f 100%);
+}
+.card {
+  background-color: rgba(255, 255, 255, 0.148);
+}
+.icon {
+  background-color: rgba(255, 255, 255, 0.171);
+}
+.inspect {
+  /* border: 0.2px solid lightcyan; */
+}

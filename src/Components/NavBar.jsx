@@ -7,7 +7,7 @@ const NavBar = () => {
       {/* .......top..... */}
 
       <div className="h-12 bg-[#132f30] w-full flex items-center justify-center">
-        <div className="flex justify-between text-textWhite w-[63%]">
+        <div className="topText flex justify-between text-textWhite w-[63%]">
           <p>+234 8067581175</p>
           <p>Login/Sign Up</p>
         </div>

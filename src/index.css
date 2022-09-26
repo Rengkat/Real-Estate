@@ -11,6 +11,7 @@
 }
 .hero-image::after {
   content: "";
+  /* color: ; */
   position: absolute;
   inset: 0;
   background: linear-gradient(135deg, #183435d7 0%, #a0a9a49f 100%);
@@ -18,9 +19,47 @@
 .card {
   background-color: rgba(255, 255, 255, 0.148);
 }
-.icon {
-  background-color: rgba(255, 255, 255, 0.171);
+.icons {
+  color: rgb(192, 189, 189);
 }
-.inspect {
-  /* border: 0.2px solid lightcyan; */
+.icon {
+  background-color: rgba(255, 255, 255, 0.241);
+}
+.circle {
+  background-color: lightgreen;
+}
+.footerHome {
+  background-image: url(../src/assets/Image/pexels-vlad-bagacian-1212053.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.footerHome::after {
+  position: absolute;
+  content: "";
+  background-color: #132f30e4;
+  inset: 0;
+}
+.iconBottom {
+  background-color: rgba(255, 255, 255, 0.334);
+  padding: 5px;
+  border-radius: 5px;
+}
+.topText {
+  animation-name: topTex;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+  animation-duration: 3s;
+  animation: 10s linear 2s infinite backwards both;
+}
+@keyframes topTex {
+  from {
+    margin-left: 0;
+    /* transform: translateX(0%); */
+  }
+  to {
+    margin-left: -100;
+    /* transform: translateX(-100%); */
+  }
 }

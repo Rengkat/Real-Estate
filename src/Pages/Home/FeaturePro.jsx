@@ -15,7 +15,7 @@ const FeaturePro = () => {
             hic.
           </p>
         </div>
-        <div className="">
+        <div className=" my-5">
           <Inspection
             heading="Tour Virtually"
             paragraph="Lorem, ipsum dolor sit amet consectetur adipisicing elit."
@@ -29,8 +29,8 @@ const FeaturePro = () => {
             paragraph="Lorem, ipsum dolor sit amet consectetur adipisicing elit."
           />
 
-          <div className="w-[100%] my-2">
-            <img src={hero1} alt="" className="w-[100%] h-[30vh]" />
+          <div className="w-[100%] mt-10">
+            <img src={hero1} alt="" className="w-[100%] h-[30vh] " />
           </div>
         </div>
       </div>

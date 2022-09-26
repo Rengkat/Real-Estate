@@ -1,8 +1,12 @@
 import { FcHome, FcShop, FcLibrary } from "react-icons/fc";
+import Brands from "./Brands";
+import CallToAction from "./CallToAction";
 import Card from "./Card";
 import FeaturePro from "./FeaturePro";
 import FeaturePro2 from "./FeaturePro2";
+import FooterHome from "./FooterHome";
 import Hero from "./Hero";
+import Testimonial from "./Testimonial";
 
 const Home = () => {
   return (
@@ -27,6 +31,10 @@ const Home = () => {
       </div>
       <FeaturePro />
       <FeaturePro2 />
+      <CallToAction />
+      <FooterHome />
+      <Testimonial />
+      <Brands />
     </div>
   );
 };

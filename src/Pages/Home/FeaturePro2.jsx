@@ -50,9 +50,11 @@ const FeaturePro2 = () => {
       {/* ...flex of green and slider btn... */}
       <div className="top flex">
         {/* ...green ..*/}
-        <div className=" bg-darkBg h-[30vh] py-3 w-[65%] shadow-md my-5">
+        <div className=" bg-darkBg h-[30vh] py-3 w-[67%] shadow-md my-5">
           <div className="pl-6 text-textWhite">
-            <h1 className=" font-bold text-xl ">Our Featured Properties</h1>
+            <h1 className=" font-bold text-xl py-2 ">
+              Our Featured Properties
+            </h1>
             <p className=" text-sm">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi
               eum blanditiis
@@ -68,7 +70,7 @@ const FeaturePro2 = () => {
         </div>
       </div>
       {/* ....card....... */}
-      <div className="absolute top-[15%] space-x-3 h-[40vh] flex mb-[100rem]">
+      <div className="absolute top-[17%] space-x-3 h-[40vh] flex mb-[100rem]">
         {data.map((display, i) => {
           return (
             <div
@@ -108,7 +110,7 @@ const FeaturePro2 = () => {
           );
         })}
       </div>
-      <div className="bottom-wite mt-[15rem]">
+      <div className="bottom-wite mt-[18rem]">
         <div>
           {" "}
           <img src={hero1} alt="image" className="w-[70%] mx-auto" />
@@ -122,7 +124,7 @@ const FeaturePro2 = () => {
             voluptatem eligendi pariatur rerum nemo cumque obcaecati, similique,
             suscipit nam nesciunt inventore!
           </p>
-          <div className="icons grid grid-cols-2  ">
+          <div className="icons grid grid-cols-2 py-5 ">
             <Statistics
               icon={<FaHome />}
               num="10000+"

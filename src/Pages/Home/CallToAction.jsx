@@ -53,16 +53,16 @@ const CallToAction = () => {
             <div className="border-2 hidden"></div>
           </div>
           {/* .....action */}
-          <div className="flex py-5 space-x-5 items-center ">
+          <div className="flex flex-col py-6 space-x-5 items-center">
             <aside className="text-center ">
-              <h1 className="font-semibold text-sm">
+              <h1 className="font-semibold text-xl">
                 Unlock Our Premium Features
               </h1>
               <p className="text-xs ">
                 Advertise with us to optimize your leasing success
               </p>
             </aside>
-            <aside className="w-[40%]">
+            <aside className="w-[60%] py-4">
               <button className="text-xs font-bold bg-[#fda604] text-textWhite rounded-md shadow-md py-3 px-4">
                 Check Our Pricing
               </button>

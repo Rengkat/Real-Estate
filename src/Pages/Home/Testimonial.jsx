@@ -45,7 +45,7 @@ const Testimonial = () => {
         return (
           <div
             key={i}
-            className=" absolute bg-textWhite w-[75%] rounded-md shadow-md px-5 py-3">
+            className=" absolute bg-textWhite w-[80%] rounded-md shadow px-5 py-3">
             <h1 className="font-bold text-xl py-2">{test.heading}</h1>
             <p className="py-3">{test.testimony}</p>
             <img

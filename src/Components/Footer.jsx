@@ -3,8 +3,8 @@ import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div className="h-[50vh] bg-darkBg mt-[5rem] flex justify-center w-full">
-      <div className="pt-3 text-[white] w-[90%] mx-auto">
+    <div className="h-[50vh] bg-darkBg mt-[6rem] pt-10 flex justify-center w-full">
+      <div className="pt-3 text-[white] mx-auto">
         <div className="flex items-center ">
           <img src={Logo} alt="Logo" className="w-12  h-16" />
           <div className="pl-1">
@@ -14,12 +14,7 @@ const Footer = () => {
             </p>
           </div>
         </div>
-        <div className="">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Praesentium molestias ipsam culpa, excepturi vero?
-          </p>
-        </div>
+
         <div className="flex justify-center text-2xl space-x-5 py-4">
           <div className="iconBottom">
             <FaFacebookF />

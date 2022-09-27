@@ -51,7 +51,7 @@ const FeaturePro2 = () => {
       <div className="top flex">
         {/* ...green ..*/}
         <div className=" bg-darkBg h-[30vh] py-3 w-[67%] shadow-md my-5">
-          <div className="pl-6 text-textWhite">
+          <div className="pl-6 pr-2 text-textWhite">
             <h1 className=" font-bold text-xl py-2 ">
               Our Featured Properties
             </h1>
@@ -70,7 +70,7 @@ const FeaturePro2 = () => {
         </div>
       </div>
       {/* ....card....... */}
-      <div className="absolute top-[17%] space-x-3 h-[40vh] flex mb-[100rem]">
+      <div className="absolute top-[16%] space-x-3 h-[35vh] flex mb-[100rem]">
         {data.map((display, i) => {
           return (
             <div
@@ -126,26 +126,26 @@ const FeaturePro2 = () => {
           </p>
           <div className="icons grid grid-cols-2 py-5 ">
             <Statistics
-              icon={<FaHome />}
+              icon={<FaHome className=" text-[#4aaeb5]" />}
               num="10000+"
               paragraph="Property Listed"
               iconStyle="#4aaeb5"
             />
             <Statistics
-              icon={<BsFillPersonFill />}
+              icon={<BsFillPersonFill className=" text-[#fda604]" />}
               num="3 Million"
               iconStyle="#fda604"
               paragraph="Total Users"
             />
             <Statistics
-              icon={<BsPeopleFill />}
+              icon={<BsPeopleFill className=" text-[#51d151]" />}
               num="10000+"
               iconStyle="#51d151"
               paragraph="Clients"
             />
 
             <Statistics
-              icon={<BsGlobe />}
+              icon={<BsGlobe className=" text-[#4aaeb5]" />}
               num="35"
               paragraph="Countries"
               iconStyle="#4aaeb5"

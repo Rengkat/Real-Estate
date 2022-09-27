@@ -1,6 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer components {
+  .abouIcons {
+    @apply w-12 h-12 mx-auto rounded-full bg-darkBg flex items-center text-2xl justify-center;
+  }
+  .mission {
+    @apply py-5 px-3 border border-[gray] my-3 rounded-lg;
+  }
+  .headingMision {
+    @apply font-bold text-xl py-3;
+  }
+}
 
 .hero-image {
   background-image: url("../src//assets//Image/hero2.jpg");
@@ -45,6 +56,26 @@
   background-color: rgba(255, 255, 255, 0.334);
   padding: 5px;
   border-radius: 5px;
+}
+.heroAbout {
+  background-image: url(./assets/Image/hero1.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.heroAbout::after {
+  position: absolute;
+  content: "";
+  inset: 0;
+  z-index: 0;
+  background: rgb(19, 47, 48);
+  background: linear-gradient(
+    90deg,
+    rgba(19, 47, 48, 1) 0%,
+    rgba(19, 47, 48, 0.8830882694874825) 0%,
+    rgba(19, 47, 48, 0.692612079011292) 62%
+  );
 }
 .topText {
   animation-name: topTex;

@@ -6,7 +6,11 @@ import Mission from "./Mission";
 const About = () => {
   return (
     <div>
-      <AboutHero />
+      <AboutHero
+        header="About Us"
+        paragraph="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur,
+            esse!"
+      />
       <Mission />
       {/* <Brands /> */}
     </div>

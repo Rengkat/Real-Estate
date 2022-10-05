@@ -1,7 +1,5 @@
-import { useContext } from "react";
 import Footer from "./Components/Footer";
 import NavBar from "./Components/NavBar";
-import { Context } from "./Contexts/AppContext";
 import { Route, Routes } from "react-router-dom";
 import Home from "./Pages/Home/Home";
 import MainShop from "./Pages/Shop/MainShop";
@@ -12,7 +10,6 @@ import Detail from "./Pages/Shop/Detail";
 // import { Home, About, Contact, Agent, MainShop } from "./Pages/Indext";
 
 function App() {
-  const { man } = useContext(Context);
   return (
     <div className="App">
       <NavBar />

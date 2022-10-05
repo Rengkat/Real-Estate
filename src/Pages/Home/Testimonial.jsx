@@ -40,23 +40,25 @@ const testimotials = [
 ];
 const Testimonial = () => {
   return (
-    <div className=" bg-textWhite flex -mt-[5rem] top-[10%] justify-center">
+    <div className=" bg-textWhite md:h-[90hv] flex -mt-[5rem] top-[10%] md:top-0 md:-mt-[15rem] justify-center">
       {testimotials.map((test, i) => {
         return (
           <div
             key={i}
-            className=" absolute bg-textWhite w-[80%] rounded-md shadow px-5 py-3">
-            <h1 className="font-bold text-xl py-2">{test.heading}</h1>
-            <p className="py-3">{test.testimony}</p>
+            className=" absolute bg-textWhite w-[80%] md:w-[30%] md:right-[10%] rounded-md shadow px-5 py-3">
+            <h1 className="font-bold text-xl md:text-2xl py-2">
+              {test.heading}
+            </h1>
+            <p className="py-3 md:text-xl md:pb-10">{test.testimony}</p>
             <img
               src={test.image}
               alt="image"
-              className="w-10 h-10 rounded-full my-1"
+              className="w-10 h-10 rounded-full my-1 md:w-20 md:h-20"
             />
-            <div className="flex justify-between">
+            <div className="flex justify-between md:pb-10">
               <div>
-                <h1 className="font-semibold">{test.name}</h1>
-                <p className="text-sm">{test.reaction}</p>
+                <h1 className="font-semibold md:text-xl">{test.name}</h1>
+                <p className="text-sm ">{test.reaction}</p>
               </div>
               <div className="flex space-x-3 text-yellowBtn">
                 <BsArrowLeftCircle fontSize={25} />

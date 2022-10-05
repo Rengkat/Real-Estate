@@ -2,14 +2,12 @@ import hero1 from "../../assets/Image/hero1.jpg";
 
 const Hero = () => {
   return (
-    <div className="h-[60vh] hero-image">
-      <div className=" absolute z-10 w-[70%] ml-8 mt-[10vh]  text-textWhite">
-        {/* <div className=" "> */}
-        <h1 className="font-bold text-3xl ">
-          Everyone Deserve the {""}
-          Opportunity of Home
+    <div className="h-[60vh] md:h-[70vh] hero-image">
+      <div className=" absolute z-10 w-[70%] md:w-[43%] ml-8 md:ml-[7rem] mt-[10vh]  text-[white]">
+        <h1 className="font-bold text-3xl md:text-6xl md:leading-snug">
+          Everyone Deserve the Opportunity of Home
         </h1>
-        <p className="py-2">
+        <p className="py-2 md:py-4 md:text-2xl">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae
           doloribus excepturi
         </p>

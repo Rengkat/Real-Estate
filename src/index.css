@@ -6,13 +6,23 @@
     @apply w-12 h-12 mx-auto rounded-full bg-darkBg flex items-center text-2xl justify-center;
   }
   .mission {
-    @apply py-5 px-3 border border-[gray] my-3 rounded-lg;
+    @apply py-5 px-3 border border-[gray] my-3 rounded-lg md:p-5;
   }
   .headingMision {
     @apply font-bold text-xl py-3;
   }
+  .navLink {
+    @apply py-2 px-5  font-semibold text-xl;
+  }
 }
-
+/* .active {
+  border: 1px solid white;
+  border-radius: 10px;
+} */
+.navLink {
+  border: 1px solid white;
+  border-radius: 10px;
+}
 .hero-image {
   background-image: url("../src//assets//Image/hero2.jpg");
   background-position: center;

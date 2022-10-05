@@ -12,7 +12,7 @@ const Home = () => {
   return (
     <div>
       <Hero />
-      <div className=" grid grid-cols-1 gap-2 p-7 bg-darkBg">
+      <div className=" grid grid-cols-1 gap-2 p-7 md:px-12 md:grid-cols-3 md:gap-5 bg-darkBg">
         <Card
           icon={<FcHome />}
           heading="Buy a Home"

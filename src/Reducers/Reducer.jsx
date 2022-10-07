@@ -5,11 +5,14 @@ const Reducer = (state, action) => {
   }
   //   geting search properties
   if (action.type === "GET_SEARCH_PROPERTIES") {
-    // const {} = action.payload;
     return {
       ...state,
       searchProperties: action.payload,
     };
+  }
+  // fetching data from api
+  if (action.type === "FETCHED_DATA") {
+    return { ...state, data: action.payload?.data?.hits };
   }
   return state;
 };

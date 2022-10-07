@@ -10,7 +10,7 @@ const Filter = () => {
   const { addSearchProperties, searchProperties } = useContext(Context);
   // const [filter, setFilter] = useState("");
 
-  console.log(searchProperties);
+  // console.log(searchProperties);
   return (
     <div className="bg-lightBg pb-[5rem]">
       <div className="w-[95%] mx-auto grid grid-cols-2 md:grid-cols-4 p-3">

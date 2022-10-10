@@ -2,18 +2,24 @@ import { useEffect, useReducer } from "react";
 import { createContext } from "react";
 import Reducer from "../Reducers/Reducer";
 import axios from "axios";
+import { data } from "../Pages/Shop/cloneApi";
 
 export const Context = createContext();
+
 const initialState = {
   isMobileMenuOpen: false,
   searchProperties: {},
-  data: [],
+  data: data,
   loading: true,
+  coordinates: {},
+  placesLocations: [],
+  bounds: {},
 };
 
 const ContextProvider = ({ children }) => {
   // useReducer Hook
   const [state, dispatch] = useReducer(Reducer, initialState);
+  // console.log(state.coordinates);
   // open mobile menu
   const openMobileMenu = () => {
     dispatch({ type: "OPEN_MOBILE_MENU" });
@@ -23,6 +29,27 @@ const ContextProvider = ({ children }) => {
     dispatch({ type: "GET_SEARCH_PROPERTIES", payload: properties });
   };
 
+  // get current coordinates lat and long
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(
+      ({ coords: { latitude, longitude } }) => {
+        dispatch({
+          type: "GET_CURRENT_POSITION",
+          payload: { lat: latitude, lng: longitude },
+        });
+      }
+    );
+  }, []);
+
+  // get palces lat and lng function
+  const getPlaceLocations = (latAndLng) => {
+    dispatch({ type: "GET_LAT_AND_LNG", payload: latAndLng });
+  };
+  // geting map bound
+
+  const getMapBound = (bounds) => {
+    dispatch({ type: "GET_MAP_BOUND", payload: bounds });
+  };
   // fetch data options
   const options = {
     method: "GET",
@@ -42,23 +69,16 @@ const ContextProvider = ({ children }) => {
       "X-RapidAPI-Host": "bayut.p.rapidapi.com",
     },
   };
-  // fetching data method
-  // const fetchData = () => {
-  //   axios
-  //     .request(options)
-  //     .then((response) => {
-  //       dispatch({ type: "FETCHED_DATA", payload: response });
-  //     })
-  //     .catch((error) => {
-  //       console.error(error);
-  //     });
-  // };
 
-  // useEffect(() => {
-  //   fetchData();
-  // }, [state.searchProperties]);
   return (
-    <Context.Provider value={{ ...state, openMobileMenu, addSearchProperties }}>
+    <Context.Provider
+      value={{
+        ...state,
+        openMobileMenu,
+        addSearchProperties,
+        getPlaceLocations,
+        getMapBound,
+      }}>
       {children}
     </Context.Provider>
   );

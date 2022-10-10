@@ -2,8 +2,12 @@ import { MdVerified } from "react-icons/md";
 import { FaBed, FaBath } from "react-icons/fa";
 import { RiLayoutGridFill } from "react-icons/ri";
 import millify from "millify";
+import { useContext } from "react";
+import { Context } from "../../Contexts/AppContext";
+import { useEffect } from "react";
 const Display = ({ property }) => {
-  // agency.logo.url
+  const { getPlaceLocations, placesLocations } = useContext(Context);
+  // console.log(placesLocations);
   const {
     coverPhoto,
     price,
@@ -11,17 +15,18 @@ const Display = ({ property }) => {
     area,
     completionStatus,
     furnishingStatus,
-    location,
     purpose,
     rentFrequency,
     rooms,
     title,
-    referenceNumber,
     baths,
-
+    geography,
     agency,
   } = property;
-  console.log(property);
+  // console.log(geography);
+  useEffect(() => {
+    getPlaceLocations(geography && geography);
+  }, [property]);
   return (
     <div className="w-[90%] mx-auto my-5 shadow-lg md:p-3">
       <img
@@ -55,14 +60,14 @@ const Display = ({ property }) => {
               <FaBed className=" text-[#056905] ml-2 text-2xl" />
             </span>
           </li>
-          |
+
           <li className="flex items-center">
             {baths}
             <span>
-              <FaBath className="text-[#056905] ml-2 text-2xl" />
+              <FaBath className="text-[#056905] ml-2 " />
             </span>
           </li>
-          |
+
           <div className="flex items-center space-x-1">
             <li>{area.toFixed(1)}</li> <li>sqft</li>
             <li>

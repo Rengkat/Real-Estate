@@ -14,6 +14,18 @@ const Reducer = (state, action) => {
   if (action.type === "FETCHED_DATA") {
     return { ...state, data: action.payload?.data?.hits };
   }
+  // get current position
+  if (action.type === "GET_CURRENT_POSITION") {
+    return { ...state, coordinates: action.payload };
+  }
+  // get palces lng and lat
+  if (action.type === "GET_LAT_AND_LNG") {
+    return { ...state, placesLocations: action.payload };
+  }
+  // get map bounds
+  if (action.type === "GET_MAP_BOUND") {
+    return { ...state, bounds: action.payload };
+  }
   return state;
 };
 

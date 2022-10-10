@@ -40,6 +40,9 @@ const NavBar = () => {
               <NavLink className=" navLink" to="/contact">
                 Contact
               </NavLink>
+              <NavLink className=" navLink" to="/map">
+                Map
+              </NavLink>
             </div>
           </div>
           {/* ......close and opne menu */}
@@ -77,6 +80,9 @@ const NavBar = () => {
               </Link>
               <Link onClick={openMobileMenu} className="py-4" to="/contact">
                 Contact
+              </Link>
+              <Link onClick={openMobileMenu} className="py-4" to="/map">
+                View In Map
               </Link>
             </div>
           </div>

@@ -7,6 +7,7 @@ import Agent from "./Pages/Agent/Agent";
 import Contact from "./Pages/Contact/Contact";
 import About from "./Pages/About/About";
 import Detail from "./Pages/Shop/Detail";
+import Map from "./Pages/Map/Map";
 // import { Home, About, Contact, Agent, MainShop } from "./Pages/Indext";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route exact path="/about" element={<About />} />
         <Route exact path="/contact" element={<Contact />} />
         <Route exact path="/:id" element={<Detail />} />
+        <Route exact path="/map" element={<Map />} />
       </Routes>
       <Footer />
     </div>

@@ -23,27 +23,17 @@ const Map = () => {
         margin={[50, 50, 50, 50]}
         defaultZoom={14}>
         {data?.map((property) => {
-          const {
-            coverPhoto,
-            price,
-            isVerified,
-            area,
-            completionStatus,
-            furnishingStatus,
-            purpose,
-            rentFrequency,
-            rooms,
-            title,
-            baths,
-            geography,
-            agency,
-          } = property;
+          const { coverPhoto, title, geography } = property;
           return (
             <div
+              className="w-[6rem] bg-textWhite"
               key={property.id}
-              lat={Number(property?.geography?.lat)}
-              lng={Number(property?.geography?.lng)}>
-              <img src={coverPhoto?.url} alt="Image" className="w-[5rem]" />
+              lat={Number(geography?.lat)}
+              lng={Number(geography?.lng)}>
+              <img src={coverPhoto?.url} alt="Image" className="w-full" />
+              <div className="text-xs p-1">
+                <h1 className=" lowercase">{title.substring(0, 30)}</h1>
+              </div>
             </div>
           );
         })}

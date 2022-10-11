@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import { BsArrowLeftCircle, BsArrowRightCircle } from "react-icons/bs";
 const testimotials = [
   {
@@ -9,6 +10,7 @@ const testimotials = [
     image:
       "https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     reaction: "Happy Client",
+    id: 1,
   },
   {
     heading: "Great Business",
@@ -18,6 +20,7 @@ const testimotials = [
     image:
       "https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     reaction: "Happy Client",
+    id: 2,
   },
   {
     heading: "Good Experience",
@@ -27,6 +30,7 @@ const testimotials = [
     image:
       "https://images.pexels.com/photos/10628468/pexels-photo-10628468.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     reaction: "Constant Client",
+    id: 3,
   },
   {
     heading: "Wanderful Experiance",
@@ -36,16 +40,46 @@ const testimotials = [
     image:
       "https://images.pexels.com/photos/6422929/pexels-photo-6422929.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     reaction: "Great Client",
+    id: 4,
   },
 ];
 const Testimonial = () => {
+  const [currentTestimony, setCurrentTestimony] = useState(1);
+  console.log(currentTestimony);
+  // check last and first num
+  // const checkNumber = (number) => {
+  // if (number > testimotials.length - 1) {
+  // return 0; //if we are at the last item, lets go to the first item
+  // }
+  // if (number < 0) {
+  // return people.length - 1; //if we get to the first item, lets go back to the last
+  // }
+  // return number; // else return number
+  // };
+  const handleClickNext = (length) => {
+    if (currentTestimony > length - 1) {
+      return setCurrentTestimony(1);
+    }
+    setCurrentTestimony(currentTestimony + 1);
+  };
+  const handleClickPrev = (length) => {
+    if (currentTestimony === 1) {
+      return setCurrentTestimony(length - 1);
+    }
+    setCurrentTestimony(currentTestimony - 1);
+  };
+
   return (
     <div className=" bg-textWhite md:h-[90hv] flex -mt-[5rem] top-[10%] md:top-0 md:-mt-[15rem] justify-center">
       {testimotials.map((test, i) => {
         return (
           <div
             key={i}
-            className=" absolute bg-textWhite w-[80%] md:w-[30%] md:right-[10%] rounded-md shadow px-5 py-3">
+            className={`absolute ${
+              test.id === currentTestimony
+                ? " right-[10%] transition-all duration-700 ease-linear"
+                : "right-[100%] transition-all duration-700 ease-linear"
+            } testimony`}>
             <h1 className="font-bold text-xl md:text-2xl py-2">
               {test.heading}
             </h1>
@@ -53,16 +87,22 @@ const Testimonial = () => {
             <img
               src={test.image}
               alt="image"
-              className="w-10 h-10 rounded-full my-1 md:w-20 md:h-20"
+              className="w-10 h-10 rounded-full my-1 md:w-20 md:h-20 object-cover"
             />
             <div className="flex justify-between md:pb-10">
               <div>
                 <h1 className="font-semibold md:text-xl">{test.name}</h1>
                 <p className="text-sm ">{test.reaction}</p>
               </div>
-              <div className="flex space-x-3 text-yellowBtn">
-                <BsArrowLeftCircle fontSize={25} />
-                <BsArrowRightCircle fontSize={25} />
+              <div className="flex space-x-3 text-yellowBtn cursor-pointer">
+                <BsArrowLeftCircle
+                  fontSize={25}
+                  onClick={() => handleClickPrev(testimotials.length)}
+                />
+                <BsArrowRightCircle
+                  fontSize={25}
+                  onClick={() => handleClickNext(testimotials.length)}
+                />
               </div>
             </div>
           </div>

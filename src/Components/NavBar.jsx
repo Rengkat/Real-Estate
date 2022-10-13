@@ -6,10 +6,7 @@ import { useContext } from "react";
 import { Context } from "../Contexts/AppContext";
 const NavBar = () => {
   const { isMobileMenuOpen, openMobileMenu } = useContext(Context);
-  // console.log(isMobileMenuOpen);
-  // const handleClickOpenMenu=()=>{
 
-  // }
   return (
     <header>
       <nav className=" bg-darkBg py-8">

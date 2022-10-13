@@ -12,7 +12,7 @@ const Reducer = (state, action) => {
   }
   // fetching data from api
   if (action.type === "FETCHED_DATA") {
-    return { ...state, data: action.payload?.data?.hits };
+    return { ...state, data: action.payload };
   }
   // get current position
   if (action.type === "GET_CURRENT_POSITION") {
@@ -25,6 +25,27 @@ const Reducer = (state, action) => {
   // get map bounds
   if (action.type === "GET_MAP_BOUND") {
     return { ...state, bounds: action.payload };
+  }
+  // next testimony
+  if (action.type === "NEXT_TESTIMONY") {
+    if (state.currentTestimony > action.payload - 1) {
+      return { ...state, currentTestimony: (state.currentTestimony = 1) };
+    }
+    return { ...state, currentTestimony: state.currentTestimony + 1 };
+  }
+  // previous testimony
+  if (action.type === "PREVIOUS_TESTIMONY") {
+    if (state.currentTestimony === 1) {
+      return {
+        ...state,
+        currentTestimony: (state.currentTestimony = action.payload - 1),
+      };
+    }
+    return { ...state, currentTestimony: state.currentTestimony - 1 };
+  }
+  // get single property id
+  if (action.type === "SINGLE_PROPERTY_ID") {
+    return { ...state, singleProductID: action.payload };
   }
   return state;
 };

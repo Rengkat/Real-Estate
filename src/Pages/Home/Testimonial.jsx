@@ -1,6 +1,8 @@
 import React from "react";
+import { useContext } from "react";
 import { useState } from "react";
 import { BsArrowLeftCircle, BsArrowRightCircle } from "react-icons/bs";
+import { Context } from "../../Contexts/AppContext";
 const testimotials = [
   {
     heading: "Excelent Experience",
@@ -44,31 +46,8 @@ const testimotials = [
   },
 ];
 const Testimonial = () => {
-  const [currentTestimony, setCurrentTestimony] = useState(1);
-  console.log(currentTestimony);
-  // check last and first num
-  // const checkNumber = (number) => {
-  // if (number > testimotials.length - 1) {
-  // return 0; //if we are at the last item, lets go to the first item
-  // }
-  // if (number < 0) {
-  // return people.length - 1; //if we get to the first item, lets go back to the last
-  // }
-  // return number; // else return number
-  // };
-  const handleClickNext = (length) => {
-    if (currentTestimony > length - 1) {
-      return setCurrentTestimony(1);
-    }
-    setCurrentTestimony(currentTestimony + 1);
-  };
-  const handleClickPrev = (length) => {
-    if (currentTestimony === 1) {
-      return setCurrentTestimony(length - 1);
-    }
-    setCurrentTestimony(currentTestimony - 1);
-  };
-
+  const { handleNextTestimony, currentTestimony, handlePrevTestimony } =
+    useContext(Context);
   return (
     <div className=" bg-textWhite md:h-[90hv] flex -mt-[5rem] top-[10%] md:top-0 md:-mt-[15rem] justify-center">
       {testimotials.map((test, i) => {
@@ -97,11 +76,11 @@ const Testimonial = () => {
               <div className="flex space-x-3 text-yellowBtn cursor-pointer">
                 <BsArrowLeftCircle
                   fontSize={25}
-                  onClick={() => handleClickPrev(testimotials.length)}
+                  onClick={() => handlePrevTestimony(testimotials.length)}
                 />
                 <BsArrowRightCircle
                   fontSize={25}
-                  onClick={() => handleClickNext(testimotials.length)}
+                  onClick={() => handleNextTestimony(testimotials.length)}
                 />
               </div>
             </div>

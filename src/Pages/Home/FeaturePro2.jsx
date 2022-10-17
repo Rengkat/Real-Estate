@@ -13,6 +13,7 @@ import Statistics from "./Statistics";
 import { useContext } from "react";
 import { Context } from "../../Contexts/AppContext";
 import { data } from "../Shop/cloneApi";
+import { Link } from "react-router-dom";
 
 const FeaturePro2 = () => {
   // const { data } = useContext(Context);
@@ -81,9 +82,11 @@ const FeaturePro2 = () => {
               <p className=" text-xs md:text-sm md:pt-2">Rent price</p>
               <div className="flex justify-between ">
                 <h1 className="md:text-xl">{display.price.toLocaleString()}</h1>
-                <button className="font-semibold text-[gray] rounded-md text-sm md:text-xl py-[1px] px-[3px] border-2 border-[grey]">
-                  View Details
-                </button>
+                <Link to={`/${display.externalID}`}>
+                  <button className="font-semibold text-[gray] rounded-md text-sm md:text-xl py-[1px] px-[3px] border-2 border-[grey]">
+                    View Details
+                  </button>
+                </Link>
               </div>
             </div>
           );

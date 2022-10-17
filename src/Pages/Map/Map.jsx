@@ -3,8 +3,7 @@ import { useContext } from "react";
 import { Context } from "../../Contexts/AppContext";
 
 const Map = () => {
-  const { coordinates, placesLocations, bounds, getMapBound, data } =
-    useContext(Context);
+  const { coordinates, data } = useContext(Context);
   return (
     <div className="h-[100vh]">
       <GoogleMapReact
@@ -15,9 +14,6 @@ const Map = () => {
           disableDefaultUI: true,
           zoomControl: true,
           // styles: mapStyles,
-        }}
-        onChange={(e) => {
-          getMapBound({ ne: e.marginBounds.ne, sw: e.marginBounds.sw });
         }}
         // onChildClick={(child) => setChildClick(child)}
         margin={[50, 50, 50, 50]}
@@ -32,7 +28,7 @@ const Map = () => {
               lng={Number(geography?.lng)}>
               <img src={coverPhoto?.url} alt="Image" className="w-full" />
               <div className="text-xs p-1">
-                <h1 className=" lowercase">{title.substring(0, 30)}</h1>
+                <h1 className=" lowercase">{title?.substring(0, 30)}</h1>
               </div>
             </div>
           );

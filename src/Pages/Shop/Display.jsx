@@ -6,7 +6,7 @@ import { useContext } from "react";
 import { Context } from "../../Contexts/AppContext";
 import { useEffect } from "react";
 const Display = ({ property }) => {
-  const { getPlaceLocations, placesLocations } = useContext(Context);
+  const { getPlaceLocations } = useContext(Context);
   // console.log(placesLocations);
   const {
     coverPhoto,

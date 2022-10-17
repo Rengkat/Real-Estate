@@ -1,4 +1,3 @@
-import React from "react";
 import { useContext } from "react";
 import { Context } from "../../Contexts/AppContext";
 import Filter from "./Filter";
@@ -8,6 +7,7 @@ import { Link } from "react-router-dom";
 const MainShop = () => {
   const { data } = useContext(Context);
   // console.log(data.externalID);
+
   return (
     <div>
       <Filter />

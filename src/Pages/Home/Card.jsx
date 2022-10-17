@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { CgArrowLongRight } from "react-icons/cg";
-const Card = ({ icon, heading, paragraph }) => {
+const Card = ({ icon, heading, paragraph, link }) => {
   return (
     <div className="card my-3  p-6 rounded-md shadow-md text-textWhite">
       <div className="icon text-3xl md:text-5xl inline-block shadow p-2 rounded-md">
@@ -11,8 +11,10 @@ const Card = ({ icon, heading, paragraph }) => {
         {heading}
       </h1>
       <p className=" text-justify "> {paragraph}</p>
-      <Link className="flex space-x-1 text-yellowBtn font-semibold md:my-5">
-        <span> Learn Now </span>
+      <Link
+        to={`${link}`}
+        className="flex space-x-1 text-yellowBtn font-semibold md:my-5">
+        <span> Check Details </span>
         <span className="pt-2">
           <CgArrowLongRight />
         </span>

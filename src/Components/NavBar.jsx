@@ -37,9 +37,6 @@ const NavBar = () => {
               <NavLink className=" navLink" to="/contact">
                 Contact
               </NavLink>
-              <NavLink className=" navLink" to="/map">
-                Map
-              </NavLink>
             </div>
           </div>
           {/* ......close and opne menu */}

@@ -1,5 +1,5 @@
 import hero1 from "../../assets/Image/hero1.jpg";
-
+import { Link } from "react-router-dom";
 const Hero = () => {
   return (
     <div className="h-[60vh] md:h-[70vh] hero-image">
@@ -11,9 +11,11 @@ const Hero = () => {
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae
           doloribus excepturi
         </p>
-        <button className=" bg-yellowBtn text-textWhite rounded-md shadow-md font-semibold py-3 px-5">
-          Check Out
-        </button>
+        <Link to="/shop">
+          <button className=" bg-yellowBtn text-textWhite rounded-md shadow-md font-semibold py-3 px-5">
+            Check Out
+          </button>
+        </Link>
         {/* </div> */}
       </div>
     </div>

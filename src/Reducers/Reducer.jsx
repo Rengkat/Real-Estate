@@ -22,9 +22,9 @@ const Reducer = (state, action) => {
   if (action.type === "GET_LAT_AND_LNG") {
     return { ...state, placesLocations: action.payload };
   }
-  // get map bounds
-  if (action.type === "GET_MAP_BOUND") {
-    return { ...state, bounds: action.payload };
+  // add property for paystak
+  if (action.type === "ADD_PROPERTY") {
+    return { ...state, property: action.payload };
   }
   // next testimony
   if (action.type === "NEXT_TESTIMONY") {
@@ -43,10 +43,11 @@ const Reducer = (state, action) => {
     }
     return { ...state, currentTestimony: state.currentTestimony - 1 };
   }
-  // get single property id
-  if (action.type === "SINGLE_PROPERTY_ID") {
-    return { ...state, singleProductID: action.payload };
-  }
+
+  // select purpose page
+  // if (action.type === "CHANGE_PAGE") {
+  //   return { ...state, page: action.payload };
+  // }
   return state;
 };
 

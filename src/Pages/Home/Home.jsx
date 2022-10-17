@@ -15,17 +15,20 @@ const Home = () => {
       <div className=" grid grid-cols-1 gap-2 p-7 md:px-12 md:grid-cols-3 md:gap-5 bg-darkBg">
         <Card
           icon={<FcHome />}
+          link="/shop"
           heading="Buy a Home"
           paragraph="Find your place with an immerasive photo experiance and the most listings, including things you won't find anywhere else"
         />
         <Card
           icon={<FcShop />}
+          link="/shop"
           heading="Rent a Home"
           paragraph="Find your place with an immerasive photo experiance and the most listings, including things you won't find anywhere else"
         />
         <Card
           icon={<FcLibrary />}
-          heading="Sell a Home"
+          link="/map"
+          heading="Check Property on Map"
           paragraph="Find your place with an immerasive photo experiance and the most listings, including things you won't find anywhere else"
         />
       </div>

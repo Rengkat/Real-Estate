@@ -28,7 +28,8 @@ const PaystackHookExample = () => {
       <button
         onClick={() => {
           initializePayment(onSuccess, onClose);
-        }}>
+        }}
+      >
         Pay Agent Fee
       </button>
     </div>
@@ -38,7 +39,6 @@ const PaystackHookExample = () => {
 const InspectionFee = () => {
   return (
     <div>
-      {" "}
       <PaystackHookExample />
     </div>
   );

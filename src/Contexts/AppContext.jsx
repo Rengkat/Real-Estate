@@ -16,6 +16,7 @@ const initialState = {
   property: {},
   currentTestimony: 1,
   page: "general-purpose",
+  activeImage: {},
 };
 
 const ContextProvider = ({ children }) => {
@@ -41,15 +42,13 @@ const ContextProvider = ({ children }) => {
   // 25.2048, 55.2708
   // get current coordinates lat and long
   useEffect(() => {
-    navigator.geolocation.getCurrentPosition(
-      ({ coords: { latitude, longitude } }) => {
-        dispatch({
-          type: "GET_CURRENT_POSITION",
-          // 25.2048° N, 55.2708° E
-          payload: { lat: latitude, lng: longitude },
-        });
-      }
-    );
+    navigator.geolocation.getCurrentPosition(({ coords: { latitude, longitude } }) => {
+      dispatch({
+        type: "GET_CURRENT_POSITION",
+        // 25.2048° N, 55.2708° E
+        payload: { lat: latitude, lng: longitude },
+      });
+    });
   }, []);
 
   // get palces lat and lng function
@@ -61,12 +60,12 @@ const ContextProvider = ({ children }) => {
     dispatch({ type: "ADD_PROPERTY", payload: property });
   };
 
-  // change page
-  // const changePage = (page) => {
-  //   dispatch({ type: "CHANGE_PAGE", payload: page });
-  // };
+  // change image
+  const changeImage = (imageurl) => {
+    dispatch({ type: "CHANGE_IMAGE", payload: imageurl });
+  };
   const m = state?.searchProperties && state?.searchProperties;
-  console.log(m);
+
   const fetchData = () => {
     const options = {
       method: "GET",
@@ -76,22 +75,12 @@ const ContextProvider = ({ children }) => {
         categoryExternalID:
           state?.searchProperties?.categoryExternalID &&
           state?.searchProperties?.categoryExternalID,
-        purpose:
-          state?.searchProperties?.purpose && state?.searchProperties?.purpose,
-        minPrice:
-          state?.searchProperties?.minPrice &&
-          state?.searchProperties?.minPrice,
-        roomsMin:
-          state?.searchProperties?.roomsMin &&
-          state?.searchProperties?.roomsMin,
-        maxPrice:
-          state?.searchProperties?.maxPrice &&
-          state?.searchProperties?.maxPrice,
-        areaMax:
-          state?.searchProperties?.areaMax && state?.searchProperties?.areaMax,
-        bathsMin:
-          state?.searchProperties?.bathsMin &&
-          state?.searchProperties?.bathsMin,
+        purpose: state?.searchProperties?.purpose && state?.searchProperties?.purpose,
+        minPrice: state?.searchProperties?.minPrice && state?.searchProperties?.minPrice,
+        roomsMin: state?.searchProperties?.roomsMin && state?.searchProperties?.roomsMin,
+        maxPrice: state?.searchProperties?.maxPrice && state?.searchProperties?.maxPrice,
+        areaMax: state?.searchProperties?.areaMax && state?.searchProperties?.areaMax,
+        bathsMin: state?.searchProperties?.bathsMin && state?.searchProperties?.bathsMin,
         hitsPerPage: "25",
         categoryExternalID:
           state?.searchProperties?.categoryExternalID &&
@@ -99,12 +88,10 @@ const ContextProvider = ({ children }) => {
         lang: "en",
         sort: state?.searchProperties?.sort && state?.searchProperties?.sort,
         rentFrequency:
-          state?.searchProperties?.rentFrequency &&
-          state?.searchProperties?.rentFrequency,
+          state?.searchProperties?.rentFrequency && state?.searchProperties?.rentFrequency,
         categoryExternalID: "4",
         furnishingStatus:
-          state?.searchProperties?.furnishingStatus &&
-          state?.searchProperties?.furnishingStatus,
+          state?.searchProperties?.furnishingStatus && state?.searchProperties?.furnishingStatus,
       },
       headers: {
         "X-RapidAPI-Key": "96d5c63021mshc715d3e1b56eef3p117ad3jsn4ce74ce1d95e",
@@ -136,7 +123,7 @@ const ContextProvider = ({ children }) => {
         getPlaceLocations,
         addProperty,
         handleNextTestimony,
-        handlePrevTestimony,
+        handlePrevTestimony,changeImage
       }}>
       {children}
     </Context.Provider>

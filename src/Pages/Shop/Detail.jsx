@@ -53,7 +53,7 @@ const Detail = () => {
           <h1>Loading...</h1>
         </div>
       ) : (
-        <div className="">
+        <div className="mt-[5rem]">
           <div className="">
             <img
               src={singleData?.coverPhoto?.url}
@@ -81,31 +81,22 @@ const Detail = () => {
                 {singleData?.title}
               </h1>
               <p className=" text-darkBg pt-1">
-                Price: ${singleData?.price?.toLocaleString()} /{" "}
-                {singleData?.rentFrequency}
+                Price: ${singleData?.price?.toLocaleString()} / {singleData?.rentFrequency}
               </p>
-              <p>
-                Agent Fee: ${((10 / 100) * singleData?.price)?.toLocaleString()}
-              </p>
+              <p>Agent Fee: ${((10 / 100) * singleData?.price)?.toLocaleString()}</p>
               <p>Refrence No: {singleData?.referenceNumber}</p>
               <p className="pb-5">Permint No: {singleData?.permitNumber}</p>
             </div>
 
             <div className=" text-center pb-20 px-5 md:text-start md:w-[100%]">
-              <h1 className="font-bold text-2xl md:text-3xl md:my-5 ">
-                Description
-              </h1>
-              <p className="md:text-xl">
-                {singleData?.description?.substring(0, 500)}
-              </p>
+              <h1 className="font-bold text-2xl md:text-3xl md:my-5 ">Description</h1>
+              <p className="md:text-xl">{singleData?.description?.substring(0, 500)}</p>
             </div>
           </div>
           <div className="flex flex-col w-[100%] mx-auto justify-between">
             <div className="my-5 bg-darkBg md:text-xl ">
               <div className=" px-10 py-5 md:py-10 md:px-16 text-[#dedada] md:w-[90%] mx-auto">
-                <h1 className="py-3 font-bold text-xl md:text-3xl">
-                  Other Facilities
-                </h1>
+                <h1 className="py-3 font-bold text-xl md:text-3xl">Other Facilities</h1>
                 <ul>
                   <li>{singleData?.area?.toFixed(1)} Square Area</li>
                   <li>{singleData?.baths} Bathroom</li>
@@ -127,9 +118,7 @@ const Detail = () => {
               </div>
             </div>
             <div className="px-8 py-2 md:w-[90%] md:px-16 mx-auto md:text-xl">
-              <h1 className="py-3 font-bold text-xl md:text-3xl">
-                Contact Agency
-              </h1>
+              <h1 className="py-3 font-bold text-xl md:text-3xl">Contact Agency</h1>
               <p>Name: {singleData?.agency?.name}</p>
               <p>Phone: {singleData?.phoneNumber?.mobile}</p>
               <p>

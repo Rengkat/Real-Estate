@@ -44,10 +44,9 @@ const Reducer = (state, action) => {
     return { ...state, currentTestimony: state.currentTestimony - 1 };
   }
 
-  // select purpose page
-  // if (action.type === "CHANGE_PAGE") {
-  //   return { ...state, page: action.payload };
-  // }
+  if (action.type === "CHANGE_IMAGE") {
+    return { ...state, activeImage: action.payload };
+  }
   return state;
 };
 
